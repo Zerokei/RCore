@@ -1,2 +1,8 @@
 [build]
 target = "riscv64gc-unknown-none-elf"
+
+# 设置链接脚本调整链接器的行为
+[target.riscv64gc-unknown-none-elf]
+rustflags = [
+    "-Clink-arg=-Tsrc/linker.ld", "-Cforce-frame-pointers=yes"
+]
